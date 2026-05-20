@@ -5,7 +5,7 @@ const stompClient = new StompJs.Client({
 stompClient.onConnect = (frame) => {
     setConnected(true);
     console.log('Connected: ' + frame);
-    stompClient.subscribe('/topics/livechat', (message) => {
+    stompClient.subscribe("/topics/livechat", (message) => {
         updateLiveChat(JSON.parse(message.body).content);
     });
 };
